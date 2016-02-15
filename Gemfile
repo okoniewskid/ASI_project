@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'bcrypt', '3.1.10'
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 #Version on rubygems not supporting rails 5.0! Must pull from git repo!
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 
