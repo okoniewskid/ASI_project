@@ -1,9 +1,6 @@
-### Nazwa Zespołu – Daniel Okoniewski
+             | Wersja
+------------ | -------------
+Ruby         | 2.3.0
+Rails        | 5.0.0
 
-1. Zaliczenie:
- - [ ] [Kreator Postaci](zaliczenie)
- - [ ] [link do wdrożonej na zewnętrznym serwerze aplikacji](/)
-1. Egzamin:
- - [ ] [nazwa aplikacji](egzamin)
- - [ ] [link do wdrożonej na zewnętrznym serwerze aplikacji](/)
-
+Kreator różnych elementów gier fabularnych, która ma dostarczać mistrzom gry prostych narzędzi do sprawnego przygotowywania sesji, oraz udostępniania ich graczom.
