@@ -15,10 +15,13 @@ class CharactersController < ApplicationController
   # GET /characters/new
   def new
     @character = Character.new
+    @races = Race.all()
   end
 
   # GET /characters/1/edit
   def edit
+    @character = Character.find(params[:id])
+    @races = Race.all()
   end
 
   # POST /characters
@@ -32,6 +35,7 @@ class CharactersController < ApplicationController
         format.html { redirect_to @character, notice: 'Postać utworzona.' }
         format.json { render :show, status: :created, location: @character }
       else
+        @races = Race.all()
         format.html { render :new }
         format.json { render json: @character.errors, status: :unprocessable_entity }
       end

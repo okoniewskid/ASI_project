@@ -1,18 +1,5 @@
 <h1>Nowa postać</h1>
 
-<%= simple_form_for @character do |f| %>
-  <%= f.input :name, label: 'Imię', placeholder: 'Podaj imię postaci', allow_blank: false %>
-  <%= f.association :race, label: 'Rasa', include_blank: false %>
-  <%= f.input :age, label: 'Wiek', placeholder: 'Podaj wiek postaci', allow_blank: false %>
-  <%= f.input :sex, label: 'Płeć', placeholder: 'Podaj płeć postaci', allow_blank: false %>
-  <%= f.input :eyecolor, label: 'Kolor oczu', placeholder: 'Podaj kolor oczu postaci', allow_blank: false %>
-  <%= f.input :haircolor, label: 'Kolor włosów', placeholder: 'Podaj kolor włosów postaci', allow_blank: false %>
-  <%= f.input :birthsign, label: 'Znak gwiezdny', placeholder: 'Podaj znak gwiezdny postaci', allow_blank: false %>
-  <%= f.input :placeofbirth, label: 'Pochodzenie', placeholder: 'Skąd jest twoja postać?', allow_blank: false %>
-  <%= f.input :specialmarks, label: 'Znaki specjalne', placeholder: 'Specjalne elementy wyglądu?', allow_blank: true %>
-  <%= f.input :weight, label: 'Waga', placeholder: 'Podaj wagę postaci', allow_blank: false %>
-  <%= f.input :height, label: 'Wzrost', placeholder: 'Podaj wzrost postaci', allow_blank: false %>
-  <%= f.button :submit, 'Stwórz' %>
-<% end %>
+<%= render 'form', character: @character %>
 
 <%= link_to 'Wróć', characters_path %>

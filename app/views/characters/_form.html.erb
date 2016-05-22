@@ -18,7 +18,7 @@
 
   <div class="form-group">
     <%= f.label :race, "Rasa" %>
-    <%= f.collection_select :race_id, Race.order(:name), :id, :name, {}, {class: "form-control"} %>
+    <%= f.collection_select :race_id, @races, :id, :name, {}, {class: "form-control"} %>
   </div>
 
   <div class="form-group">
