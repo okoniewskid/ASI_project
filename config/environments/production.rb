@@ -79,5 +79,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'kreator-postaci.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port: 2525,
+    enable_starttls_auto: true,
+    user_name: '<your-username>',
+    password: '<your-password>',
+    authentication: 'login'
+  }
+  config.action_mailer.default_url_options = { host: 'https://kreator-postaci-okoniewskid.c9users.io/' }
 end

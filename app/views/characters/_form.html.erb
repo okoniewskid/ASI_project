@@ -1,0 +1,72 @@
+<%= form_for(character) do |f| %>
+  <% if character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+      <ul>
+      <% character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, "Imię" %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :race, "Rasa" %>
+    <%= f.collection_select :race_id, Race.order(:name), :id, :name, {}, {class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :age, "Wiek" %>
+    <%= f.text_field :age, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :sex, "Płeć" %>
+    <%= f.text_field :sex, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :weight, "Waga" %>
+    <%= f.text_field :weight, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :height, "Wzrost" %>
+    <%= f.text_field :height, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :eyecolor, "Kolor oczu" %>
+    <%= f.text_field :eyecolor, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :haircolor, "Kolor włosów" %>
+    <%= f.text_field :haircolor, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :birthsign, "Znak gwiezdny" %>
+    <%= f.text_field :birthsign, class: 'form-control' %>
+  </div>
+  
+   <div class="form-group">
+    <%= f.label :placeofbirth, "Pochodznie" %>
+    <%= f.text_field :placeofbirth, class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :specialmarks, "Znaki specjalne" %>
+    <%= f.text_field :specialmarks, class: 'form-control' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Zatwierdź", class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -11,9 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219114126) do
+ActiveRecord::Schema.define(version: 20160513170230) do
+
+  create_table "abilities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "sex"
+    t.string   "eyecolor"
+    t.string   "haircolor"
+    t.string   "birthsign"
+    t.string   "placeofbirth"
+    t.string   "specialmarks"
+    t.integer  "weight"
+    t.decimal  "height"
+    t.integer  "experience"
+    t.integer  "ww"
+    t.integer  "us"
+    t.integer  "k"
+    t.integer  "odp"
+    t.integer  "zr"
+    t.integer  "intelligence"
+    t.integer  "sw"
+    t.integer  "ogd"
+    t.integer  "a"
+    t.integer  "hp"
+    t.integer  "s"
+    t.integer  "wt"
+    t.integer  "sz"
+    t.integer  "mag"
+    t.integer  "po"
+    t.integer  "pp"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "race_id"
+    t.index ["race_id"], name: "index_characters_on_race_id"
+  end
 
   create_table "races", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false

@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: 
+  sex: MyString
+  eyecolor: MyString
+  haircolor: MyString
+  birthsign: MyString
+  placeofbirth: MyString
+  specialmarks: MyString
+  weight: 
+  height: 
+  experience: 
+  ww: 
+  us: 
+  k: 
+  odp: 
+  zr: 
+  int: 
+  sw: 
+  ogd: 
+  a: 
+  hp: 
+  s: 
+  wt: 
+  sz: 
+  mag: 
+  po: 
+  pp: 
+
+two:
+  name: MyString
+  age: 
+  sex: MyString
+  eyecolor: MyString
+  haircolor: MyString
+  birthsign: MyString
+  placeofbirth: MyString
+  specialmarks: MyString
+  weight: 
+  height: 
+  experience: 
+  ww: 
+  us: 
+  k: 
+  odp: 
+  zr: 
+  int: 
+  sw: 
+  ogd: 
+  a: 
+  hp: 
+  s: 
+  wt: 
+  sz: 
+  mag: 
+  po: 
+  pp: 

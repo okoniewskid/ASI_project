@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Postacie</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Wiek</th>
+      <th>Płeć</th>
+      <th>Kolor oczu</th>
+      <th>Kolor włosów</th>
+      <th>Znak gwiezdny</th>
+      <th>Pochodzenie</th>
+      <th>Znaki specjalne</th>
+      <th>Waga</th>
+      <th>Wzrost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.name %></td>
+        <td><%= character.age %></td>
+        <td><%= character.sex %></td>
+        <td><%= character.eyecolor %></td>
+        <td><%= character.haircolor %></td>
+        <td><%= character.birthsign %></td>
+        <td><%= character.placeofbirth %></td>
+        <td><%= character.specialmarks %></td>
+        <td><%= character.weight %></td>
+        <td><%= character.height %></td>
+        <td><%= link_to 'Wyświetl', character %></td>
+        <td><%= link_to 'Edytuj', edit_character_path(character) %></td>
+        <td><%= link_to 'Usuń', character, method: :delete, data: { confirm: 'Jesteś pewien?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nowa postać', new_character_path %>

@@ -1,5 +1,9 @@
 <h1>Nowa rasa</h1>
 
-<%= render 'form', race: @race %>
+<%= simple_form_for @race do |f| %>
+  <%= f.input :name, label: 'Nazwa', placeholder: 'Tutaj wpisz nazwe rasy', allow_blank: false %>
+  <%= f.input :description, label: 'Opis', placeholder: 'Tutaj wpisz krótki opis', allow_blank: false %>
+  <%= f.button :submit, 'Stwórz' %>
+<% end %>
 
 <%= link_to 'Wstecz', races_path %>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :characters
+  resources :abilities
+  resources :skills
   resources :races
   devise_for :users
   root 'home#index'

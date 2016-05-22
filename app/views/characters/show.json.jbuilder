@@ -1,0 +1,1 @@
+json.extract! @character, :id, :name, :age, :sex, :eyecolor, :haircolor, :birthsign, :placeofbirth, :specialmarks, :weight, :height, :experience, :ww, :us, :k, :odp, :zr, :intelligence, :sw, :ogd, :a, :hp, :s, :wt, :sz, :mag, :po, :pp, :created_at, :updated_at

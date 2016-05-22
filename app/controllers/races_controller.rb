@@ -4,7 +4,7 @@ class RacesController < ApplicationController
   # GET /races
   # GET /races.json
   def index
-    @races = Race.all
+    @races = Race.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /races/1

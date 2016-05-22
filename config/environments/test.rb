@@ -31,8 +31,16 @@ Rails.application.configure do
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
-
+    config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port: 2525,
+    enable_starttls_auto: true,
+    user_name: '<your-username>',
+    password: '<your-password>',
+    authentication: 'login'
+  }
+  config.action_mailer.default_url_options = { host: 'https://kreator-postaci-okoniewskid.c9users.io/' }
   # Randomize the order test cases are executed.
   config.active_support.test_order = :random
 
