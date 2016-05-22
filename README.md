@@ -6,3 +6,11 @@ Rails        | 5.0.0
 Kreator różnych elementów gier fabularnych, która ma dostarczać mistrzom gry prostych narzędzi do sprawnego przygotowywania sesji, oraz udostępniania ich graczom.
 
 Problemy z renderowaniem referencji w widokach, projekt jeszcze nie gotowy.
+
+Skład zespołu:
+
+ Daniel Okoniewski
+ 
+ Filip Kamola
+ 
+ Konrad Olobry
