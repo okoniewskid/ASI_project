@@ -9,8 +9,6 @@ Problemy z renderowaniem referencji w widokach, projekt jeszcze nie gotowy.
 
 Skład zespołu:
 
- Daniel Okoniewski
- 
- Filip Kamola
- 
- Konrad Olobry
+* Daniel Okoniewski
+* Filip Kamola – tylko 1 commit
+* Konrad Olobry – brak commitów
