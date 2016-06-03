@@ -9,5 +9,4 @@ class Character < ApplicationRecord
     validates :placeofbirth, presence: true
     validates :weight, presence: true
     validates :height, presence: true
-    validates :race_id, presence: true
 end

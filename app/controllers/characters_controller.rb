@@ -74,10 +74,13 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :age, :sex, :eyecolor, :haircolor, :birthsign, :placeofbirth, :specialmarks, :weight, :height, :experience, :ww, :us, :k, :odp, :zr, :intelligence, :sw, :ogd, :a, :hp, :s, :wt, :sz, :mag, :po, :pp, :race)
+      params.require(:character).permit(:name, :age, :sex, :eyecolor, :haircolor, :birthsign, :placeofbirth, :specialmarks, :weight, :height, :experience, :ww, :us, :k, :odp, :zr, :intelligence, :sw, :ogd, :a, :hp, :s, :wt, :sz, :mag, :po, :pp, :race_id)
     end
     
     def set_main_parameters
+      if @character.race_id == 2
+        set_parameters_krasnolud
+      else
       @character.ww = roll(10,2) + 20
       @character.us = roll(10,2) + 20
       @character.k = roll(10,2) + 20
@@ -88,15 +91,33 @@ class CharactersController < ApplicationController
       @character.ogd = roll(10,2) + 20
       @character.a = 1
       @character.hp = roll(4,1) + 9
+      end
     end
     
     def set_secondary_parameters
       @character.s = @character.k / 10
       @character.wt = @character.odp / 10
-      @character.sz = 4
+      if @character.race_id == 2
+        @character.sz = 3
+      else
+        @character.sz = 4
+      end
       @character.mag = 0
       @character.po = 0
       @character.pp = roll(2,1) + 1
+    end
+    
+    def set_parameters_krasnolud
+      @character.ww = roll(10,2) + 30
+      @character.us = roll(10,2) + 20
+      @character.k = roll(10,2) + 20
+      @character.odp = roll(10,2) + 30
+      @character.zr = roll(10,2) + 10
+      @character.intelligence = roll(10,2) + 20
+      @character.sw = roll(10,2) + 20
+      @character.ogd = roll(10,2) + 10
+      @character.a = 1
+      @character.hp = roll(4,1) + 10
     end
     
     def roll(sides, number=1)
@@ -112,5 +133,4 @@ class CharactersController < ApplicationController
       end
       total
     end
-  end
-
+end

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Imię</th>
+      <th>Rasa</th>
       <th>Wiek</th>
       <th>Płeć</th>
       <th>Kolor oczu</th>
@@ -23,6 +24,7 @@
     <% @characters.each do |character| %>
       <tr>
         <td><%= character.name %></td>
+        <td><%= character.race.name %></td>
         <td><%= character.age %></td>
         <td><%= character.sex %></td>
         <td><%= character.eyecolor %></td>
