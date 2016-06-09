@@ -28,6 +28,7 @@ class CharactersController < ApplicationController
   # POST /characters.json
   def create
     @character = Character.new(character_params)
+    @char_race = Race.find(@character.race_id)
     set_main_parameters
     set_secondary_parameters
     respond_to do |format|
@@ -78,30 +79,21 @@ class CharactersController < ApplicationController
     end
     
     def set_main_parameters
-      if @character.race_id == 2
+      case @char_race.name
+      when "Krasnolud"
         set_parameters_krasnolud
+      when "Elf"
+        set_parameters_elf
+      when "Niziołek"
+        set_parameters_niziolek
       else
-      @character.ww = roll(10,2) + 20
-      @character.us = roll(10,2) + 20
-      @character.k = roll(10,2) + 20
-      @character.odp = roll(10,2) + 20
-      @character.zr = roll(10,2) + 20
-      @character.intelligence = roll(10,2) + 20
-      @character.sw = roll(10,2) + 20
-      @character.ogd = roll(10,2) + 20
-      @character.a = 1
-      @character.hp = roll(4,1) + 9
+        set_parameters_human_and_default
       end
     end
     
     def set_secondary_parameters
       @character.s = @character.k / 10
       @character.wt = @character.odp / 10
-      if @character.race_id == 2
-        @character.sz = 3
-      else
-        @character.sz = 4
-      end
       @character.mag = 0
       @character.po = 0
       @character.pp = roll(2,1) + 1
@@ -118,6 +110,49 @@ class CharactersController < ApplicationController
       @character.ogd = roll(10,2) + 10
       @character.a = 1
       @character.hp = roll(4,1) + 10
+      @character.sz = 3
+    end
+    
+    def set_parameters_elf
+      @character.ww = roll(10,2) + 20
+      @character.us = roll(10,2) + 30
+      @character.k = roll(10,2) + 20
+      @character.odp = roll(10,2) + 20
+      @character.zr = roll(10,2) + 30
+      @character.intelligence = roll(10,2) + 20
+      @character.sw = roll(10,2) + 20
+      @character.ogd = roll(10,2) + 20
+      @character.a = 1
+      @character.hp = roll(4,1) + 8
+      @character.sz = 5
+    end
+    
+    def set_parameters_niziolek
+      @character.ww = roll(10,2) + 10
+      @character.us = roll(10,2) + 30
+      @character.k = roll(10,2) + 10
+      @character.odp = roll(10,2) + 10
+      @character.zr = roll(10,2) + 30
+      @character.intelligence = roll(10,2) + 20
+      @character.sw = roll(10,2) + 20
+      @character.ogd = roll(10,2) + 30
+      @character.a = 1
+      @character.hp = roll(4,1) + 7
+      @character.sz = 4
+    end
+    
+    def set_parameters_human_and_default
+      @character.ww = roll(10,2) + 20
+      @character.us = roll(10,2) + 20
+      @character.k = roll(10,2) + 20
+      @character.odp = roll(10,2) + 20
+      @character.zr = roll(10,2) + 20
+      @character.intelligence = roll(10,2) + 20
+      @character.sw = roll(10,2) + 20
+      @character.ogd = roll(10,2) + 20
+      @character.a = 1
+      @character.hp = roll(4,1) + 9
+      @character.sz = 4
     end
     
     def roll(sides, number=1)
